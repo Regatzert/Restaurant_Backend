@@ -6,10 +6,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 
 public record UsuarioUpdateRequest (
-    @Size(
-                max = 100,
-                message = "Los nombres no pueden superar los 100 caracteres"
-        )
+        @Size(max = 100, message = "Los nombres no pueden superar los 100 caracteres")
         String nombres,
 
         @Size(
