@@ -75,10 +75,7 @@ public class UsuarioController {
     }
 
     @PatchMapping("/{id}/desactivar")
-    public ResponseEntity<Void> desactivar(
-            @PathVariable Long id
-    ) {
-
+    public ResponseEntity<Void> desactivar(@PathVariable Long id) {
         usuarioService.desactivar(id);
 
         return ResponseEntity.noContent().build();

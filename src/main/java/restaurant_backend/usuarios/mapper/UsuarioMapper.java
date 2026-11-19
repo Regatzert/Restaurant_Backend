@@ -10,10 +10,7 @@ import restaurant_backend.usuarios.dto.UsuarioUpdateRequest;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
-@Mapper(
-        componentModel = "spring",
-        uses = RolMapper.class
-)
+@Mapper(componentModel = "spring", uses = RolMapper.class)
 public interface UsuarioMapper {
      UsuarioResponse toResponse(Usuario usuario);
 
@@ -29,29 +26,10 @@ public interface UsuarioMapper {
     @Mapping(target = "password", ignore = true)
     @Mapping(target = "fechaCreacion", ignore = true)
     @Mapping(target = "roles", ignore = true)
-    @Mapping(
-            target = "activo",
-            nullValuePropertyMappingStrategy =
-                    NullValuePropertyMappingStrategy.IGNORE
-    )
-    @Mapping(
-            target = "nombres",
-            nullValuePropertyMappingStrategy =
-                    NullValuePropertyMappingStrategy.IGNORE
-    )
-    @Mapping(
-            target = "apellidos",
-            nullValuePropertyMappingStrategy =
-                    NullValuePropertyMappingStrategy.IGNORE
-    )
-    @Mapping(
-            target = "email",
-            nullValuePropertyMappingStrategy =
-                    NullValuePropertyMappingStrategy.IGNORE
-    )
-    void updateEntity(
-            UsuarioUpdateRequest request,
-            @MappingTarget Usuario usuario
-    );
+    @Mapping(target = "activo", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "nombres",nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "apellidos", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "email", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    void updateEntity(UsuarioUpdateRequest request, @MappingTarget Usuario usuario);
 
 }
